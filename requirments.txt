@@ -1,0 +1,4 @@
+Required Libraries:
+Pillow
+xml.etree.ElementTree
+re
