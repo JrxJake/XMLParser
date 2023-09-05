@@ -12,7 +12,7 @@ root = tree.getroot()
 class Globe:
     leafList = list()
 
-
+#Recursively checks if the given node is a leaf node
 def check(node):
     #Returns a list of all the node's children
     childList = node.findall("*")
@@ -27,11 +27,11 @@ def check(node):
     else:
         Globe.leafList.append(node)
         
-
+#Checking if the root is a leaf node
 check(root)
 
 #Open the image        
-with Image.open(extension + ".png") as im:
+with Image.open(extension + ".png") as img:
 
     for i in Globe.leafList:
     
@@ -42,10 +42,7 @@ with Image.open(extension + ".png") as im:
         coords = re.findall(r'\d+', boundString)
 
         #Draw the rectangle
-        draw = ImageDraw.Draw(im)
-        draw.rectangle([(int(coords[0]), int(coords[1])), (int(coords[2]), int(coords[3]))], fill=None, outline=(255, 255, 0), width=5)
+        draw = ImageDraw.Draw(img)
+        draw.rectangle([(int(coords[0]), int(coords[1])), (int(coords[2]), int(coords[3]))], fill = None, outline = (255, 255, 0), width = 5)
 
-    im.show()
-
-# print(len(Globe.leafList))
-
+    img.show()
