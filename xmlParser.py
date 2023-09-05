@@ -3,7 +3,7 @@ import re
 from PIL import Image, ImageDraw
 import xml.etree.ElementTree as ET
 
-extension = input("Enter .xml/png extension: ")
+extension = input("Enter the .xml/png extension: ")
 
 tree = ET.parse(extension + '.xml')
 root = tree.getroot()
